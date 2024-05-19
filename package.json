@@ -2,6 +2,7 @@
   "name": "financas-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.16.7",
     "@testing-library/jest-dom": "^5.17.0",
@@ -10,6 +11,7 @@
     "axios": "^1.6.8",
     "bootstrap": "^5.3.3",
     "bootswatch": "^5.3.3",
+    "jwt-decode": "^4.0.0",
     "primeflex": "^3.3.1",
     "primeicons": "^7.0.0",
     "primereact": "^10.6.5",
@@ -17,6 +19,7 @@
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.23.0",
     "react-scripts": "5.0.1",
+    "steam": "^1.4.1",
     "toastr": "^2.1.4",
     "web-vitals": "^2.1.4"
   },

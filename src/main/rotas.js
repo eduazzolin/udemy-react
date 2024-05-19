@@ -12,21 +12,24 @@ const PrivateRoute = ({isUsuarioAutenticado, element}) => {
   return isUsuarioAutenticado ? element : <Navigate to="/login"/>;
 }
 
-function Rotas() {
+function  Rotas()  {
 
   const authContext = useContext(AuthContext);
-  const {usuarioAutenticado, isAutenticado, iniciarSessao, encerrarSessao} = authContext;
-  console.log('ROTAS is autenticado: ' + isAutenticado)
+  const {isAutenticado} = authContext;
+  console.log('rotas:', isAutenticado)
   return (
     <Router>
       <div>
         <Navbar/>
         <Routes>
           <Route path="/home" element={<PrivateRoute isUsuarioAutenticado={isAutenticado} element={<Home/>}/>}/>
+          <Route path="/" element={<Navigate to="/home"/>}/>
           <Route path="/login" element={<Login/>}/>
           <Route path="/cadastro-usuarios" element={<CadastroUsuario/>}/>
           <Route path="/consulta-lancamentos" element={<PrivateRoute isUsuarioAutenticado={isAutenticado}
                                                                      element={<ConsultaLancamentos/>}/>}/>
+          <Route path="/cadastro-lancamentos"
+                 element={<PrivateRoute isUsuarioAutenticado={isAutenticado} element={<CadastroLancamentos/>}/>}/>
           <Route path="/cadastro-lancamentos/:id" element={<PrivateRoute isUsuarioAutenticado={isAutenticado}
                                                                          element={<CadastroLancamentos/>}/>}/>
         </Routes>
